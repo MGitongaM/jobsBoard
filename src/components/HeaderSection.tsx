@@ -5,8 +5,8 @@ import React from "react";
 export default function Header() {
   return (
     <header className="w-full bg-amber-600 ">
-      <div className=" max-w-6xl mx-auto flex justify-between items-center p-4">
-        <div className="c">
+      <div className=" max-w-6xl mx-auto flex justify-center items-center p-4">
+        <div className="">
           <Link href="/">
             <Image
               src="/images/jobs-board-logo.webp"
@@ -17,7 +17,7 @@ export default function Header() {
             />
           </Link>
         </div>
-        <div className="c">menu</div>
+        {/* <div className="c">menu</div> */}
       </div>
     </header>
   );

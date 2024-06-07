@@ -14,7 +14,7 @@ export default function HomePageSection() {
       <FeaturedJobs/>
       <Testimonials/>
       <FeaturedComapnies/>
-      <StartedSection/>
+      
     </>
   );
 }

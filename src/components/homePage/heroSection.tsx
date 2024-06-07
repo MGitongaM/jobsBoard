@@ -4,9 +4,9 @@ import React from "react";
 export default function HeroSection() {
   return (
     <section className=" relative h-[80vh] bg-black/50  px-2 py-10 ">
-      <div className="text-white space-y-5 grid content-center pl-48 max-w-3xl h-96 ">
-        <h1 className="text-3xl">The future of remote work is here.</h1>
-        <p className="text-base">
+      <div className="text-white space-y-5 grid content-center pl-48 max-w-4xl h-96 ">
+        <h1 className="text-6xl font-semibold">The future of remote work is here.</h1>
+        <p className="text-base pr-16">
           Get instant access to an expertly curated list of remote jobs in tech,
           marketing, customer support and more.
         </p>

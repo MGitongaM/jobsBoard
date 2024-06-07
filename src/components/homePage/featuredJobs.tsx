@@ -1,16 +1,24 @@
 "use client";
 import { MapPin, Clock7, Barcode } from "lucide-react";
-import { featuredJobs } from "@/app/constData/featuredJobs";
+// import { featuredJobs } from "@/app/constData/featuredJobs";
 
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
-import { getProducts2} from "@/lib/jobicyApi";
+import { getProducts2 } from "@/lib/jobicyApi";
 import SkeletonOne from "@/components/SkeletonOne";
+import { getJobsBySearchTitle } from "@/lib/rapidapi";
+import { Button } from "../ui/button";
+import Link from "next/link";
 
 export default function FeaturedJobs() {
-  const { data, isPending, isError, error } = useQuery({
-    queryKey: ["getProducts"],
-    queryFn: () => getProducts2(),
+  const {
+    data: featuredJobs,
+    isPending,
+    isError,
+    error,
+  } = useQuery({
+    queryKey: ["getFeaturedJobs"],
+    queryFn: () => getJobsBySearchTitle("Project Managers"),
   });
 
   if (isPending) {
@@ -26,9 +34,11 @@ export default function FeaturedJobs() {
   if (isError) {
     return (
       <>
-        <section className=" max-w-6xl mx-auto grid place-content-center text-center  text-black bg-red-400 z-50">
-          <p>There was an issue getting them job lisitings</p>
-          <pre>{error.message}</pre>
+        <section className=" max-w-6xl mx-auto grid place-content-center text-center  text-black">
+          <p className="text-base">
+            There was an issue getting the featured job lisitings
+          </p>
+          <pre className="text-xs text-red-300">{error.message}</pre>
         </section>
       </>
     );
@@ -41,38 +51,47 @@ export default function FeaturedJobs() {
           A few jobs handpicked by our staff.
         </p>
         <div className="my-10 space-y-8">
-          <article className="p-10 bg-amber-100">
-            <pre>
-              {data?.products?.map((dt: any) => (
-                <div key={dt.id}>{dt?.title}</div>
-              ))}
-            </pre>
-            {/* <pre>{data}</pre> */}
-          </article>
-          {featuredJobs.map((job) => (
+          {featuredJobs.data.slice(0, 5).map((job: any) => (
             <div
-              key={job.jobTitle}
+              key={job?.job_id}
               className=" bg-jobsBg rounded-md px-2 py-4 space-y-7 hover:shadow-lg transition ease-linear"
             >
-              <h3 className="text-2xl font-semibold">{job.jobTitle}</h3>
+              <div className="flex justify-between gap-4">
+                <h3 className="text-2xl font-medium">{job?.job_title}</h3>
+                <Button variant="outline">
+                  <Link href={`/job/${job?.job_id}`} target="_blanket">
+                    View
+                  </Link>
+                </Button>
+              </div>
               <div className="flex gap-4">
-                <p className="text-base uppercase">{job.companyName}</p>
-                <p className="text-base uppercase text-gray-400 ">
-                  {job.jobCategory}
+                <p className="text-sm uppercase">
+                  {job?.employer_company_type}
+                </p>
+                <p className="text-sm uppercase text-gray-400 ">
+                  {job?.employer_name}
                 </p>
               </div>
               <div className="flex gap-4">
                 <div className="flex gap-2">
                   <MapPin size={20} />
-                  <p className="text-base text-gray-400">{job.location}</p>
+                  <p className="text-base text-gray-400">
+                    {job?.job_city},{job?.job_country}
+                  </p>
                 </div>
                 <div className="flex gap-2">
                   <Clock7 size={20} />
-                  <p className="text-base text-gray-400 ">{job.jobType}</p>
+                  <p className="text-base text-gray-400 ">
+                    {new Date(
+                      `${job?.job_posted_at_datetime_utc}`
+                    ).toLocaleDateString()}
+                  </p>
                 </div>
                 <div className="flex gap-2">
                   <Barcode size={20} />
-                  <p className="text-base text-gray-400 ">{job.jobLevel}</p>
+                  <p className="text-base text-gray-400 ">
+                    Duration: {job?.job_employment_type}
+                  </p>
                 </div>
               </div>
             </div>

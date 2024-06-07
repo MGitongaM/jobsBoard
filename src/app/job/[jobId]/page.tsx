@@ -20,7 +20,7 @@ export default function Page({ params }: { params: { jobId: string } }) {
   if (isPending) {
     return (
       <>
-        <div className="max-w-7xl mx-auto min-h-screen ">
+        <div className="max-w-7xl mx-auto min-h-screen py-4">
           <SkeletonTwo />
         </div>
       </>

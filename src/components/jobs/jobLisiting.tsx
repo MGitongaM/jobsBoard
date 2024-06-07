@@ -25,7 +25,7 @@ export default function JobListing() {
   if (isPending) {
     return (
       <>
-        <div className="max-w-6xl mx-auto space-y-8">
+        <div className="max-w-6xl mx-auto grid grid-cols-2 gap-4  space-y-8">
           {[1, 2, 3, 4, 5].map((n) => (
             <SkeletonOne key={n} />
           ))}
@@ -56,7 +56,7 @@ export default function JobListing() {
     <>
       <div className="bg-jobsPrimary mx-auto px-3 py-10">
         <h1 className="text-center text-4xl text-black px-2 py-10">
-          {search} Jobs Listing{" "}
+          {search ?? `Featured`} Jobs Listing{" "}
         </h1>
         <hr />
         <hr />
