@@ -93,7 +93,7 @@ export default function JobCardDetails(jobDetail: JobDetails) {
                       )
                     )??(
                       <p className="text-black text-center">
-                          No Qualifications are need for this role
+                          No Qualifications are needed, you will be trained upon being accepted
                         </p>
                     )}
                   </AccordionContent>
@@ -113,9 +113,9 @@ export default function JobCardDetails(jobDetail: JobDetails) {
                         {resp}
                       </li>
                     )) ?? (
-                      <li className="leading-7 py-2">
-                        Job benfits will be commuicated successfull applicants
-                      </li>
+                      <p className="leading-7 py-2">
+                        Job benfits will be commuicated to successfull applicants
+                      </p>
                     )}
                   </AccordionContent>
                 </AccordionItem>
