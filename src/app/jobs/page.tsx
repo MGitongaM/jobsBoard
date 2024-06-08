@@ -1,7 +1,7 @@
 import JobListing from "@/components/jobs/jobLisiting";
 import JobsHeadingSection from "@/components/jobs/jobsheadingSection";
 // import UrlSearchParam from "@/components/jobsPage/urlSearchParam";
-import React from "react";
+import React, { Suspense } from "react";
 
 export default function jobsPage() {
   return (
@@ -9,7 +9,9 @@ export default function jobsPage() {
       <section className="min-h-[89vh]">
 
         {/* <JobsHeadingSection /> */}
-        <JobListing />
+        <Suspense>
+          <JobListing />
+        </Suspense>
         {/* <UrlSearchParam /> */}
       </section>
     </>
