@@ -44,7 +44,7 @@ export default function FeaturedJobs() {
     );
   }
   return (
-    <section className="bg-jobsPrimary px-2 py-10">
+    <section className="bg-amber-50 px-2 py-10">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-4xl font-bold">Featured Jobs</h2>
         <p className="text-base text-gray-700">
@@ -54,7 +54,7 @@ export default function FeaturedJobs() {
           {featuredJobs?.data?.slice(0, 5).map((job: any) => (
             <div
               key={job?.job_id}
-              className=" bg-jobsBg rounded-md px-2 py-4 space-y-7 hover:shadow-lg transition ease-linear"
+              className=" bg-jobsBg rounded-md px-2 py-4 space-y-7 hover:bg-amber-100 hover:shadow-amber-400 hover:shadow-md transition ease-linear"
             >
               <div className="flex justify-between gap-4">
                 <h3 className="text-lg md:text-2xl font-medium">{job?.job_title}</h3>

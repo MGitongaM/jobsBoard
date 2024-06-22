@@ -3,7 +3,7 @@ import React from "react";
 
 export default function HeroSection() {
   return (
-    <section className=" relative h-[80vh] bg-black/60  px-5 py-10 ">
+    <section className=" relative h-[85vh] bg-black/60  px-5 py-10 ">
       <div className="text-white space-y-5 grid content-end md:content-end px-auto md:pl-48 max-w-3xl h-96 ">
         <h1 className="text-4xl md:text-6xl font-semibold">
           Your Next Career Move Starts Here
@@ -22,8 +22,8 @@ export default function HeroSection() {
         priority
         width={900}
         height={500}
-        // className="w-full h-full object-cover object-right-top absolute  top-0 left-0 -z-10"
-        className="w-full h-full object-cover object-left absolute  top-0 left-0 -z-10"
+        className="w-full h-full object-cover object-right-top absolute  top-0 left-0 -z-10"
+        // className="w-full h-full object-cover object-left absolute  top-0 left-0 -z-10"
       />
     </section>
   );

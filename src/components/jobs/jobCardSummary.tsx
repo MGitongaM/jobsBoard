@@ -7,7 +7,8 @@ import { JobSummary } from "@/app/types/jobDetails";
 export default function JobCardSummary(jobSummaryDetails: JobSummary) {
   return (
     <>
-      <div className="bg-jobsBg rounded-md px-4 py-4 space-y-7 hover:shadow-lg transition ease-linear">
+      {/* <div className="bg-jobsBg rounded-md px-4 py-4 space-y-7 hover:shadow-lg transition ease-linear"> */}
+      <div className="bg-jobsBg rounded-md px-4 py-4 space-y-7 hover:bg-amber-100 hover:shadow-amber-400 hover:shadow-md transition ease-linear">
         {/* <div className=" backdrop-blur-xl bg-amber-800/60 rounded-md px-4 py-4 space-y-7 hover:shadow-lg transition ease-linear"> */}
         <div className="flex justify-between gap-4">
           <h3 className="text-lg md:text-xl font-medium">
