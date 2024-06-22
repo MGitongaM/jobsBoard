@@ -10,11 +10,11 @@ export default function JobCardSummary(jobSummaryDetails: JobSummary) {
       <div className="bg-jobsBg rounded-md px-4 py-4 space-y-7 hover:shadow-lg transition ease-linear">
         {/* <div className=" backdrop-blur-xl bg-amber-800/60 rounded-md px-4 py-4 space-y-7 hover:shadow-lg transition ease-linear"> */}
         <div className="flex justify-between gap-4">
-          <h3 className="text-xl font-medium">
+          <h3 className="text-lg md:text-xl font-medium">
             {jobSummaryDetails?.job_title}
           </h3>
-          <Button variant="outline">
-            <Link href={`/job/${jobSummaryDetails?.job_id}`} target="_blanket">
+          <Button variant="outline" asChild>
+            <Link href={`/job/${jobSummaryDetails?.job_id}`} target="_blanket" className="">
               View
             </Link>
           </Button>
@@ -29,13 +29,13 @@ export default function JobCardSummary(jobSummaryDetails: JobSummary) {
         <div className="flex gap-4">
           <div className="flex gap-2">
             <MapPin size={20} />
-            <p className="text-sm text-gray-400">
+            <p className="text-xs lg:text-sm text-gray-400">
               {jobSummaryDetails?.job_city},{jobSummaryDetails?.job_country}
             </p>
           </div>
           <div className="flex gap-2">
             <Clock7 size={20} />
-            <p className="text-sm text-gray-400">
+            <p className="text-xs lg:text-sm text-gray-400">
               <span className="pr-2">Posted on:</span>
               {new Date(
                 `${jobSummaryDetails?.job_posted_at_datetime_utc}`
@@ -44,7 +44,7 @@ export default function JobCardSummary(jobSummaryDetails: JobSummary) {
           </div>
           <div className="flex gap-2">
             <Barcode size={20} />
-            <p className="text-sm text-gray-400 ">
+            <p className="text-xs lg:text-sm text-gray-400 ">
               Duration: {jobSummaryDetails?.job_employment_type}
             </p>
           </div>

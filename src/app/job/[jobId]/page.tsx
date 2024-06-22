@@ -43,7 +43,7 @@ export default function Page({ params }: { params: { jobId: string } }) {
     <>
       <section className="bg-jobsBg px-3 py-10">
         <div className="max-w-7xl  mx-auto ">
-          <JobCardDetails {...jobDetail.data[0]} />
+          <JobCardDetails {...jobDetail?.data[0]} />
         </div>
       </section>
     </>

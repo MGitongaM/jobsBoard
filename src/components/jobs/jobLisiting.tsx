@@ -54,17 +54,24 @@ export default function JobListing() {
 
   return (
     <>
-      <div className="bg-jobsPrimary mx-auto px-3 py-10">
-        <h1 className="text-center text-4xl text-black px-2 py-10">
+      <div className=" mx-auto px-3 py-10">
+        <h1 className="text-center text-2xl md:text-4xl font-semibold text-black px-2 pb-10">
           {search ?? `Featured`} Jobs Listing{" "}
         </h1>
         <hr />
         <hr />
-        <div  className="max-w-7xl mx-auto grid grid-cols-2 gap-8 my-2">
-        {jobs.data.map((jb: any) => (
-            <JobCardSummary {...jb} key={jb.job_id}/>
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 my-2">
+          {jobs?.data?.map((jb: any) => (
+            <JobCardSummary {...jb} key={jb.job_id} />
           ))}
-          </div>
+        </div>
+
+        {/* demo listing data  */}
+        {/* <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 my-2">
+          {allJobs?.map((jb: any) => (
+            <JobCardSummary {...jb} key={jb.job_id} />
+          ))}
+        </div> */}
 
         <hr />
         <hr />

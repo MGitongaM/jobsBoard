@@ -6,7 +6,7 @@ import React, { Suspense } from "react";
 export default function jobsPage() {
   return (
     <>
-      <section className="min-h-[89vh]">
+      <section className="min-h-[89vh] bg-jobsPrimary">
 
         {/* <JobsHeadingSection /> */}
         <Suspense>

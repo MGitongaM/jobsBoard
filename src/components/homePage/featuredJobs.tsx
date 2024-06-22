@@ -51,7 +51,7 @@ export default function FeaturedJobs() {
           A few jobs handpicked by our staff.
         </p>
         <div className="my-10 space-y-8">
-          {featuredJobs.data.slice(0, 5).map((job: any) => (
+          {featuredJobs?.data?.slice(0, 5).map((job: any) => (
             <div
               key={job?.job_id}
               className=" bg-jobsBg rounded-md px-2 py-4 space-y-7 hover:shadow-lg transition ease-linear"
