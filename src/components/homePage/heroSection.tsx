@@ -23,7 +23,6 @@ export default function HeroSection() {
         width={900}
         height={500}
         className="w-full h-full object-cover object-right-top absolute  top-0 left-0 -z-10"
-        // className="w-full h-full object-cover object-left absolute  top-0 left-0 -z-10"
       />
     </section>
   );
