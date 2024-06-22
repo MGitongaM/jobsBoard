@@ -48,7 +48,7 @@ export default function FeaturedJobs() {
       <div className="max-w-5xl mx-auto">
         <h2 className="text-4xl font-bold">Featured Jobs</h2>
         <p className="text-base text-gray-700">
-          A few jobs handpicked by our staff.
+          {/* A few jobs handpicked by our staff. */}
         </p>
         <div className="my-10 space-y-8">
           {featuredJobs?.data?.slice(0, 5).map((job: any) => (
@@ -57,7 +57,7 @@ export default function FeaturedJobs() {
               className=" bg-jobsBg rounded-md px-2 py-4 space-y-7 hover:shadow-lg transition ease-linear"
             >
               <div className="flex justify-between gap-4">
-                <h3 className="text-2xl font-medium">{job?.job_title}</h3>
+                <h3 className="text-lg md:text-2xl font-medium">{job?.job_title}</h3>
                 <Button variant="outline">
                   <Link href={`/job/${job?.job_id}`} target="_blanket">
                     View
@@ -65,23 +65,23 @@ export default function FeaturedJobs() {
                 </Button>
               </div>
               <div className="flex gap-4">
-                <p className="text-sm uppercase">
+                <p className="text-xs lg:text-sm uppercase">
                   {job?.employer_company_type}
                 </p>
-                <p className="text-sm uppercase text-gray-400 ">
+                <p className="text-xs lg:text-sm uppercase text-gray-400 ">
                   {job?.employer_name}
                 </p>
               </div>
               <div className="flex gap-4">
                 <div className="flex gap-2">
                   <MapPin size={20} />
-                  <p className="text-base text-gray-400">
+                  <p className="text-xs lg:text-base text-gray-400">
                     {job?.job_city},{job?.job_country}
                   </p>
                 </div>
                 <div className="flex gap-2">
                   <Clock7 size={20} />
-                  <p className="text-base text-gray-400 ">
+                  <p className="text-xs lg:text-base text-gray-400 ">
                     {new Date(
                       `${job?.job_posted_at_datetime_utc}`
                     ).toLocaleDateString()}
@@ -89,7 +89,7 @@ export default function FeaturedJobs() {
                 </div>
                 <div className="flex gap-2">
                   <Barcode size={20} />
-                  <p className="text-base text-gray-400 ">
+                  <p className="text-xs lg:text-base text-gray-400 ">
                     Duration: {job?.job_employment_type}
                   </p>
                 </div>
